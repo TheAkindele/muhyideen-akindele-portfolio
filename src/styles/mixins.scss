@@ -1,0 +1,99 @@
+@use 'sass:math';
+
+@mixin flex($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin fontTiltPrism($size, $height, $weight ) {
+	font-family: 'Tilt Prism', cursive;
+    // font-size: clamp();
+	font-size: ($size / 16) + rem;
+	line-height: ($height / 16) + rem;
+	font-weight: $weight;
+}
+
+@mixin fontMontserat($size, $height, $weight ) {
+	font-family: 'Montserrat Alternates', sans-serif;
+    // font-size: clamp();
+	font-size: ($size / 16) + rem;
+	line-height: ($height / 16) + rem;
+	font-weight: $weight;
+}
+
+@mixin fontAurore() {
+	font-family: 'La Belle Aurore', cursive;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-weight: normal;
+  color: $tag-color; // 
+}
+
+$breakpoints: (
+    x_small: '414px',
+    small: '576px',
+    mobile: '768px',
+    tab: "991px",
+    large: "1024px", 
+    x_large: '1280px',
+    mac_13: "1440px",
+) !default;
+
+@mixin screenSize($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+  
+
+// @mixin screen($size) {
+// 	@if ($size == ("mac-13")) {
+// 		@media screen and (max-width: 1440px) {
+// 			@content;
+// 		}
+// 	}
+// 	@if ($size == "x-large") {
+// 		@media screen and (max-width: 1280px) {
+// 			@content;
+// 		}
+// 	}
+// 	@if ($size == "large") {
+// 		@media screen and (max-width: 1024px) {
+// 			@content;
+// 		}
+// 	}
+// 	@if ($size == "medium") {
+// 		@media screen and (max-width: 991px) {
+// 			@content;
+// 		}
+// 	}
+// 	@if ($size == "inbetween") {
+// 		@media screen and (max-width: 767.99px) {
+// 			@content;
+// 		}
+// 	} @else if($size == "small") {
+// 		@media screen and (max-width: 576px) {
+// 			@content;
+// 		}
+// 	} @else if($size == "x-small") {
+// 		@media screen and (max-width: 414px) {
+// 			@content;
+// 		}
+// 	} @else if($size == $size) {
+// 		@media screen and (max-width: $size) {
+// 			@content;
+// 		}
+// 	}
+// }

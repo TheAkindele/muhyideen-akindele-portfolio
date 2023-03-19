@@ -1,24 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { Contextprovider } from 'utils/Context';
+import { Button, Navbar } from './components';
+import { About, LandingPage } from './screens';
 
 function App() {
+//   const [themeState, setThemeState] = React.useState(false);
+//     const toggleTheme =  () => setThemeState(!themeState)
+
+//   // first we check if a theme is set so we can persist the theme even when refreshed
+//   React.useEffect(() => {
+//     const getTheme = localStorage.getItem('Theme');
+//     // console.log("theme==", getTheme)
+//     if (getTheme === 'dark') setThemeState(true);
+//   }, [])
+
+// React.useEffect(() => {
+//     // setThemeState(!themeState);
+//     if (themeState) {
+//         localStorage.setItem('Theme', 'dark');
+//         document.body.classList.add('dark-mode');
+//     } 
+//     else {
+//         localStorage.setItem('Theme', 'light');
+//         document.body.classList.remove('dark-mode');
+//     }
+// }, [themeState])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <BrowserRouter>
+      <Contextprovider>
+        <Navbar />
+        <main className='app-main' >
+          <LandingPage />
+          <About />
+          <div id="project"></div>
+          <div id="contact"></div>
+            {/* <Button text="My Button" onClick={() => alert("button clicked ooo")} /> */}
+        </main>
+     </Contextprovider>
+     </BrowserRouter>
     </div>
   );
 }

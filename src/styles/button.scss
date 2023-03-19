@@ -1,0 +1,66 @@
+.button {
+    min-width: 9rem;
+    max-width: 11rem;
+    height: 2.5rem;
+    @include flex(row, center, center);
+    gap: 5px;
+    border: 2px solid $general-normal-green;
+    border-radius: 4px;
+    @include fontMontserat(16, 20, 400);
+    color: $general-normal-green;
+    background-color: transparent;
+    cursor: pointer;
+    // padding: 0.3rem 1.2rem;
+
+    &:hover {
+        animation: borderColorToggle 2s infinite alternate;
+    }
+
+    img {
+        width: 1.5rem;
+    }
+}
+
+.sec-btn {
+    padding: 1rem 2rem;
+    border-radius: 80px;
+    background-color: $light-dark-bg;
+    @include flex(row, center, center);
+    gap: 2px;
+    border: none;
+    outline: none;
+
+    img {
+        width: 3rem;
+        border: 1px solid red;
+    }
+
+    span {
+        @include fontMontserat(16, 20, 600);
+    }
+}
+
+@keyframes borderColorToggle {
+    25% {
+        border-style: dotted; 
+        border-color: $general-brighter-green;
+        color: $general-brighter-green;
+    }
+    50%  {
+        border-style: double;
+        border-color: red;
+        color: red;
+    }
+	75% {
+		border-style: dashed;
+        border-color: #3A98B9;
+        color: #3A98B9;
+	}
+    100% {
+        border-style: solid;
+        border-color: yellow;
+        color: yellow;
+    }
+}
+
+
