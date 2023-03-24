@@ -1,2 +1,2 @@
-export * from "./About"
-export * from "./LandingPage"
+export * from "./Home"
+export * from "./ProjectsPage"

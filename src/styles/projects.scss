@@ -1,0 +1,185 @@
+
+.project {
+    &_container {
+        // height: calc(100vh - 5rem);
+        height: auto;
+        width: 100%;
+        @include flex(column, unset, unset);
+        // border-bottom: 1px solid $tag-color;
+
+        main {
+            width: 100%;
+            height: 100%;
+            @include flex(column, unset, unset);
+            padding: 1rem 5%;
+            // border: 2px solid blue;
+            @include screenSize("tab") {
+                // padding: 5%;
+            }
+        }
+
+        .project-wrapper {
+            width: 100%;
+            height: auto;
+            @include flex(column, unset, unset);
+            gap: 3rem;
+            margin: 3rem 0 1.5rem 0;
+            border: 2px solid green;
+        }
+    }
+
+    &_card-container {
+        width: 50rem; //75%
+        height: 25rem;
+        @include flex(row, center, unset);
+        position: relative;
+        border: 2px solid blue;
+
+        &:nth-child(even) {
+            align-self: flex-end;
+            // border: 2px solid cyan;
+        }
+
+        @include screenSize("tab") {
+            width: 100%;
+            height: 22rem;
+        }
+
+        .center {
+            width: 75%;
+            height: 100%;
+            position: relative;
+            // @include backgroundImage("", center, 100% 100%);
+            border-radius: 8px;
+            cursor: pointer;
+            // background-image: ;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            // background-size: 100% 100%;
+            border: 2px solid red;
+
+            @include screenSize("tab") {
+                width: 90%;
+            }
+            @include screenSize("mobile") {
+                width: 100%;
+            }
+
+            &-img {
+                width: 100%;
+                height: 100%;
+                @include backgroundImage("", center, 100% 100%);
+            }
+
+            &:hover + .right {
+                display: block;
+
+                width: 22rem;
+                height: auto;   //8rem
+                padding: 0.5rem;
+                position: absolute;
+                right: 0;
+                top: 2%;
+                z-index: 100;
+                background: #07070a99;      // #26283e99;
+                color: white;
+                border-radius: 4px;
+                box-sizing: border-box;
+                border: 1px solid black;
+            }
+
+            &:hover + .left {
+                display: block;
+
+                width: 20rem;
+                height: auto;   //6rem
+                padding: 0.5rem;
+                position: absolute;
+                left: 0;
+                bottom: 2%;
+                z-index: 200;
+                background: #38394f99;      // #26283e99;
+                color: white;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+        }
+
+        .left {
+            display: none;
+            
+            // width: 20rem;
+            // height: auto;   //6rem
+            // padding: 0.5rem;
+            // position: absolute;
+            // left: 0;
+            // bottom: 2%;
+            // z-index: 100;
+            // background: #38394f99;      // #26283e99;
+            // color: white;
+            // border-radius: 4px;
+            // box-sizing: border-box;
+            // border: 1px solid black;
+        }
+        
+        .right {
+            display: none;
+        //     width: 22rem;
+        //     height: auto;   //8rem
+        //     padding: 0.5rem;
+        //     position: absolute;
+        //     right: 0;
+        //     top: 2%;
+        //     z-index: 100;
+        //     background: #07070a99;      // #26283e99;
+        //     color: white;
+        //     border-radius: 4px;
+        //     box-sizing: border-box;
+        //     border: 1px solid black;
+        }
+
+        .project-title {
+            @include fontMontserat(20, 30, 700);
+            margin-bottom: 1rem;
+        }
+        .project-desc {
+            @include fontMontserat(16, 24, 500);
+        }
+        .tech {
+            @include fontMontserat(16, 24, 700);
+            margin-bottom: 0.4rem;
+            // color: $general-normal-green;
+        }
+        .project-tech {
+            @include flex(row, unset, center);
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            
+            li {
+                @include flex(row, unset, center);
+                gap: 2px;
+                border-radius: 32px;
+                background-color: $light-dark-bg;
+                padding: 0 15px;
+                box-sizing: border-box;
+
+                span {
+                    @include fontMontserat(14, 18, 600);
+                    color: $general-normal-green;
+                }
+            }
+        }
+
+    }
+
+    &_page {
+
+    }
+}
+
+
+
+
+

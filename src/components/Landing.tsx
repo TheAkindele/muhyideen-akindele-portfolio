@@ -1,20 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useNavigate} from "react-router-dom"
-import { Button } from '../components'
+import { Button } from '.'
 
 type Props = {}
 
-// export const BtnText = ({text, img}: any) => {
-//   return (
-//     <div style={{display: "flex", alignItems: "center", gap: "8px"}}>
-//       <span>{text}</span>
-//       <img src={img} alt="" style={{width: "2rem", height: "1.5rem", }}/>
-//     </div>
-//   )
-// }
 
 export const LandingPage = (props: Props) => {
-  const navigate = useNavigate()
 
   return (
     <section className='landing_container' id="landing">
@@ -24,6 +15,7 @@ export const LandingPage = (props: Props) => {
             <span className='text-secondary'> Holla </span>
             <span role="img" aria-label="sheep">👋, </span>
             <span> welcome to my space</span>
+            
         </p>
 
         <div className='landing_intro'>
@@ -34,20 +26,28 @@ export const LandingPage = (props: Props) => {
             </div>
         </div>
 
-        <p className='landing_summary'>
+        <p className='landing_summary' id="bg-screen" >
             A creative 
-            <span className='shallow'>software engineer</span>
+            <span className='bold'>software engineer</span>
             with years of experience engineering exceptional
             <span className='bold'>web experiences,</span> 
             <br />
             passionate about engineering intuitive and dynamic 
-            <span className='shallow'>software solutions</span>
+            <span className='bold'>software solutions</span>
+        </p>
+        <p className='landing_summary' id="sm-screen">
+            A creative 
+            <span className='bold'>software engineer</span>
+            with years of experience engineering exceptional
+            <span className='bold'>web experiences,</span> 
+            passionate about engineering intuitive and dynamic 
+            <span className='bold'>software solutions</span>
         </p>
 
         <Button
-          text="Meet Me" 
+          text="Download Resume" 
           btnType="primary" 
-          suffix={"/icons/arrow-right.png"}
+          // suffix={"/icons/arrow-right.png"}
           // onClick={() => navigate()}
         />
 

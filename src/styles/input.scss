@@ -1,0 +1,42 @@
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-radius: 4px;
+  }
+  
+  .input-container:focus-within label {
+    transform: translate(0, 12px) scale(0.8);
+    @include fontMontserat(15, 20, 400);
+  }
+  
+  .input-container .filled {
+    transform: translate(0, 12px) scale(0.8);
+  }
+  
+  .input-container label {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(0, 23px) scale(1);
+    transform-origin: top left;
+    transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    left: 16px;
+  }
+  
+  .input-container input {
+    height: 64px;
+    border-radius: 4px;
+    border: none;
+    padding: 24px 16px 4px 16px;
+    outline: none;
+    box-shadow: none;
+    transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    @include fontMontserat(16, 20, 600);
+  }
+  
+//   .input-container input:focus {
+//     box-shadow: 0 0 0 2px #79b1ff;
+//   }
+  

@@ -3,8 +3,11 @@
         height: calc(100vh - 5rem);
         width: 100%;
         @include flex(column, unset, unset);
-        border-bottom: 1px solid $tag-color;
+        // border-bottom: 1px solid $tag-color;
         box-sizing: border-box;
+        @include screenSize("mobile") {
+          height: 80vh;
+        }
 
         main {
             width: 100%;
@@ -25,6 +28,11 @@
         position: relative;
         @include flex(row, unset, center);
         gap: 5px;
+
+        @include screenSize("mobile") {
+          flex-wrap: wrap;
+          margin: 1rem 0;
+        }
     }
 
     &_iam {
@@ -56,13 +64,19 @@
             -webkit-text-fill-color: transparent;
             animation: textclip 2s linear infinite;
             display: inline-block;
+
+            @include screenSize("mobile") {
+              @include fontMontserat(24, 35, 700);
+            }
         }
     }
 
     &_summary {
-        // color: $color-white;
         @include fontMontserat(18, 26, 500);
         margin-bottom: 3rem;
+        @include screenSize("mobile") {
+          @include fontMontserat(16, 22, 500);
+        }
     }
 }
 

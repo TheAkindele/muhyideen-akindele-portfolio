@@ -5,10 +5,8 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    // background-color: $color-app-background;
-    z-index: 100;
+    z-index: 1000;
     @include flex(row, space-between, center);
-    // color: $color-white;
     border-bottom: 1px solid $tag-color;
     box-sizing: border-box;
 
@@ -23,10 +21,15 @@ nav {
         color: $general-brighter-green;
         padding: 5px 0.4rem;
         cursor: pointer;
+        z-index: 300;
         box-sizing: border-box;
 
         &:hover {
             animation: borderColorToggle 4s infinite alternate;
+        }
+
+        @include screenSize("mobile") {
+            left: 10%;
         }
     }
     
@@ -52,6 +55,10 @@ nav {
 
             &:hover {
                 border-bottom: 2px solid $general-normal-green;
+            }
+
+            &-menu {
+                text-decoration: none;
             }
         }
 
@@ -101,4 +108,54 @@ nav {
         border-color: #6C00FF;
         color: #6C00FF;
     }
+}
+
+
+.sider {
+    display: none;
+	@include screenSize("mobile") {
+		display: block;
+		width: 0%;
+		min-height: calc(100vh - 4.5rem);
+		overflow-x: hidden;
+		position: fixed;
+        top: 4.5rem;
+		right: -100%;
+		bottom: 0;
+		transition: width 1s, height 1s;
+		background: #FFFFFF;
+		color: white;
+		z-index: 200;
+		box-sizing: border-box;
+	}
+  }
+  .side_open {
+    // display: none;
+    @include screenSize("mobile") {
+		width: 95%;
+    	min-height: calc(100vh - 4.5rem);
+		cursor: pointer;
+		position: fixed;
+		top: 4.5rem;
+		right: 0;
+		bottom: 0;
+		z-index: 200;
+		overflow-x: hidden;
+		overflow-y: auto;
+		box-sizing: border-box;
+	}
+  }
+  .side_close {
+    // display: none;
+	@include screenSize("mobile") {
+		width: 0;
+		min-height: calc(100vh - 4.5rem);
+		overflow: hidden;
+		position: fixed;
+		top: 4.5rem;
+		right: 0;
+		bottom: 0;
+		transition: width 0.5s;
+		box-sizing: border-box;
+	}
 }

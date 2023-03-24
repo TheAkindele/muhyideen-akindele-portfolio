@@ -1,16 +1,22 @@
 .button {
-    min-width: 9rem;
-    max-width: 11rem;
+    // min-width: 9rem;
+    width: auto;
+    max-width: 15rem;
     height: 2.5rem;
+    padding: 0 2rem;
     @include flex(row, center, center);
     gap: 5px;
     border: 2px solid $general-normal-green;
     border-radius: 4px;
-    @include fontMontserat(16, 20, 400);
+    @include fontMontserat(16, 20, 500);
     color: $general-normal-green;
     background-color: transparent;
     cursor: pointer;
-    // padding: 0.3rem 1.2rem;
+
+    @include screenSize("mobile") {
+        padding: 0 1rem;
+    }
+    
 
     &:hover {
         animation: borderColorToggle 2s infinite alternate;
@@ -22,7 +28,7 @@
 }
 
 .sec-btn {
-    padding: 1rem 2rem;
+    padding: 0.7rem 2rem;
     border-radius: 80px;
     background-color: $light-dark-bg;
     @include flex(row, center, center);
@@ -37,6 +43,14 @@
 
     span {
         @include fontMontserat(16, 20, 600);
+    }
+
+    @include screenSize("mobile") {
+        padding: 0.5rem 1rem;
+
+        span {
+            @include fontMontserat(14, 18, 600);
+        }
     }
 }
 

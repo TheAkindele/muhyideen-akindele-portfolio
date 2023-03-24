@@ -17,20 +17,17 @@ export const Contextprovider = ({children}: childProps) => {
     const themeToggle =  () => setThemeState(!themeState) 
 
     useEffect(() => {
-        const getTheme = localStorage.getItem('Theme');
-        console.log("local storage theme==", getTheme)
+        const getTheme = localStorage.getItem('portfolio-theme');
         if (getTheme === 'dark') setThemeState(true);
       }, [])
     
     useEffect(() => {
-        // setThemeState(!themeState);
         if (themeState) {
-            console.log("what is theme???? ", themeState)
-            localStorage.setItem('Theme', 'dark');
+            localStorage.setItem('portfolio-theme', 'dark');
             document.body.classList.add('dark-mode');
         } 
         else {
-            localStorage.setItem('Theme', 'light');
+            localStorage.setItem('portfolio-theme', 'light');
             document.body.classList.remove('dark-mode');
         }
     }, [themeState])
