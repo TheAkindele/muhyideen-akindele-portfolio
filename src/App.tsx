@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { Contextprovider } from 'utils/Context';
 import { Navbar, Projects } from './components';
-import { HomePage, ProjectsPage } from './screens';
+import { HomePage } from './screens';
 
 function App() {
 

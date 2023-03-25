@@ -11,6 +11,7 @@
 @import "./contact.scss";
 @import "./input.scss";
 @import "./hamburger.scss";
+@import "./sidebar.scss";
 
 
 * {
@@ -94,6 +95,10 @@ body {
   @include screenSize("mobile") {
     @include fontMontserat(18, 32, 700);
   }
+}
+
+.download-btn {
+  text-decoration: none;
 }
 
 #bg-screen {

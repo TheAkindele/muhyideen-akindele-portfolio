@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
-interface Props {
-  showElement: () => void
-}
+// interface Props {
+//   showElement: () => void
+// }
 
 
 export const useIntersectionObserver = () => {
@@ -12,13 +12,13 @@ export const useIntersectionObserver = () => {
   // console.log("target ref-- ", targetRef)
   
 
-  const containerRef = useRef(null)
+  // const containerRef = useRef(null)
 
-  const options = {
-    // root: null,
-    rootMargin: "0px",
-    threshold: 1
-  }
+  // const options = {
+  //   // root: null,
+  //   rootMargin: "0px",
+  //   threshold: 1
+  // }
 
   // const projectCards = document.querySelectorAll(".project_card-container")
 

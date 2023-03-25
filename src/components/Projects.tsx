@@ -1,17 +1,11 @@
 import { useIntersectionObserver } from 'hooks'
-import React, { useEffect, useRef } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { projectData } from 'utils/projectData'
 import { Button } from './Button'
 import { ProjectCard } from './ProjectCard'
 
-type Props = {}
 
-const projectArr = [
-  1, 2, 3, 4, 5, 6
-]
-
-export const Projects = (props: Props) => {
+export const Projects = () => {
   const navigate = useNavigate()
   const {pathname} = useLocation()
 

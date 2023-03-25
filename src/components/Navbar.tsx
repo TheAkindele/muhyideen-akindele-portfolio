@@ -86,7 +86,7 @@ export const Navbar = (props: Props) => {
         />
 
         <aside className={`sider ${side ? "side_open" : "side_close"}`}>
-            <Sidebar />
+            <Sidebar toggleSider={() => setSide(false)} />
         </aside> 
 
         <HamburgerSvg 

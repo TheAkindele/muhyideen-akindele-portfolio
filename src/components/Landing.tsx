@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import {useNavigate} from "react-router-dom"
+import React from 'react'
 import { Button } from '.'
 
 type Props = {}
@@ -22,11 +21,16 @@ export const LandingPage = (props: Props) => {
             exceptional web experiences.
         </p>
 
-        <Button
-          text="Download Resume" 
-          btnType="primary" 
-          className='landing_btn'
-        />
+        <a href="https://docs.google.com/document/d/1mrQ3gzTim5bE1uYS7SZ3xA-izz9-gX3VhZ0yxQSlyjc/edit?usp=sharing" target="_blank" rel="noopener noreferrer" 
+          className='download-btn'
+        >
+          <Button
+            text="Download Resume" 
+            btnType="primary" 
+            className='landing_btn'
+          />
+        </a>
+        
       </main>
 
       <span className='text-italic-close'>{"</landing page>"}</span>

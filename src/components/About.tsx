@@ -22,7 +22,7 @@ export const About = (props: Props) => {
           <div className="left">
             <p className='about-me'>
               Hi, my name is
-              <span className='name'> Muhyideen Akindele</span>, 
+              <span className='name'> Muhyideen Akindele</span>. 
               I am a seasoned software engineer who has architectured and developed highly scalable frontend solutions and web experiences for individuals and businesses 
               across industries. I am equipped with diverse skill-set acquired over the years as a very enthusiastic individual, team member and team lead. 
               I am a supportive, creative thinker, energetic team player that is dedicated to providing solutions to challenges with user friendly, highly 
@@ -38,7 +38,7 @@ export const About = (props: Props) => {
               <ul>
                 {skills.map((item, i) => (
                   <li style={{display: "flex"}} key={i}>
-                    <Button btnType="secondary" text={item} />
+                    <Button btnType="secondary" text={item} className="text-secondary" />
                 </li>
                 ))}
               </ul>
