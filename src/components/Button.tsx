@@ -6,11 +6,12 @@ export interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void
   prefix?: string
   suffix?: string
+  className?: string
 }
 
-export const Button = ({btnType, prefix, suffix, text, onClick}: IButton) => {
+export const Button = ({btnType, prefix, suffix, text, onClick, className}: IButton) => {
   return (
-    <button className={btnType === "primary" ? "button" : "sec-btn"} onClick={() => onClick && onClick()}>
+    <button className={`${btnType === "primary" ? "button" : "sec-btn"} ${className} `} onClick={() => onClick && onClick()}>
       {prefix && (
         <img src={prefix} alt="" />
       )}

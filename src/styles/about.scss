@@ -18,6 +18,7 @@
             box-sizing: border-box;
             @include screenSize("mobile") {
                 padding: 1rem 5%;
+                height: auto;
             }
 
             section {
@@ -26,7 +27,8 @@
                 @include flex(row, unset, unset);
 
                 @include screenSize("tab") {
-                    flex-direction: column;
+                    flex-direction: column-reverse;
+                    gap: 3rem;
                     margin-top: 3rem;
                 }
 
@@ -38,6 +40,30 @@
 
                     .about-me {
                         @include fontMontserat(16, 30, 500); 
+
+                        .name {
+                            position: relative;
+                            @include fontMontserat(20, 30, 700);
+                            margin-left: 5px;
+                            text-transform: uppercase;
+                            background-image: linear-gradient(
+                                -225deg,
+                                $general-normal-green 0%,
+                                $color-offwhite 29%,
+                                #ff1361 67%,
+                                #fff800 100%
+                            );
+                            background-size: auto auto;
+                            background-clip: border-box;
+                            background-size: 200% auto;
+                            color: #fff;
+                            background-clip: text;
+                            text-fill-color: transparent;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            animation: textclip 2s linear infinite;
+                            display: inline-block;
+                        }
                     }
 
                     @include screenSize("tab") {
@@ -79,29 +105,13 @@
                 }
                 .right {
                     min-width: 30rem;
-                    padding: 2rem;
-                    // border: 2px solid red;
-
-                    // img {
-                    //     width: 25rem;
-                    //     height: 24rem;
-                    //     border-radius: 50%;
-                    // }
+                    padding: 0 2rem;
+                    @include flex(row, center, center);
 
                     @include screenSize("tab") {
                         width: 100%;
                         min-width: 0;
                         @include flex(row, center, center);
-
-                        // img {
-                        //     // width: ;
-                        // }
-                    }
-                    @include screenSize("tab") {
-                        // img {
-                        //     width: 15rem;
-                        //     height: 14.5rem;
-                        // }
                     }
                 }
             }
@@ -110,64 +120,62 @@
 }
 
 
-// .gallery {
-//     --s: 280px;
-//     display: grid;
-//     width: var(--s);
-//     // height: 4.5rem;
-//     // border-radius: 50%;
-//     aspect-ratio: 1;
-//     overflow: hidden;
-//     padding: calc(var(--s) / 20);
-//     border-radius: 50%;
-//     position: relative;
-//     clip-path: circle(49.5%);
-// }
+.pics_box {
+    width: 22rem;
+    position: relative;
+    transform: center -5em;
+    border: 5px double $general-normal-green;
+    border-radius: 4px;
 
-// .gallery::after {
-//     content: "";
-//     position: absolute;
-//     inset: 0;
-//     padding: inherit;
-//     border-radius: inherit;
-//     background: repeating-conic-gradient(#f2d622 0 30deg, #22f283 0 60deg);
-//     -webkit-mask: linear-gradient(#fff 0 0) content-box,
-//     linear-gradient(#fff 0 0);
-//     -webkit-mask-composite: xor;
-//     mask-composite: exclude;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+  
+    /* We will the animation defined below to
+       this element */
+    animation: moveImageHanger infinite 0.5s alternate ease-in-out;
+}
+.pics_box::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    transform: translateX(-50%);
+    border: 5px double $general-normal-green;
+    border-radius: 50%;
+    background-color: $general-normal-green;
+  }
+  
+  .pics_box::after {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    height: 5em;
+    border-radius: 0.75em;
+    left: 50%;
+    top: -20%;
+    transform: translateX(-50%);
+    border: 5px double $general-normal-green;
+    position: fixed;
+  
+    /* The z-index of -2 is set to keep the object of 
+      ::after pseudo-class to beneath the other objects
+    */
+    z-index: -2;
+  }
 
-// }
+  @keyframes moveImageHanger {
+    from {
+      transform: rotate(-6deg);
+    }
+    to {
+      transform: rotate(6deg);
+    }
+  }
 
-// .galley > img {
-//     grid-area: 1/1;
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: inherit;
-//     transform-origin: 50% 120.7%;
-// }
-
-// .gallery::after, .gallery > img {
-//     animation: toggleImageAnimation 8s infinite cubic-bezier(.5, -0.2, .5, 1.2);
-// }
-
-// .gallery > img:nth-child(2) {
-//     animation-delay: -2s;
-// }
-// .gallery > img:nth-child(3) {
-//     animation-delay: -4s;
-// }
-// .gallery > img:nth-child(4) {
-//     animation-delay: -6s;
-// }
-
-// @keyframes toggleImageAnimation {
-//     0%, 3% {transform: rotate(0);}
-//     22%, 27% {transform: rotate(-90deg);}
-//     47%, 52% {transform: rotate(-180deg);}
-//     72%, 77% {transform: rotate(-270deg);}
-//     98%, 100% {transform: rotate(-360deg);}
-// }
 
 .gallery  {
     --s: 25rem; /* control the size */

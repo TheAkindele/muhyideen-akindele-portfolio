@@ -1,27 +1,20 @@
-import React, { useState, useRef, useContext } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import React, { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { HashLink } from "react-router-hash-link";
 import { HamburgerSvg } from './HamburgerSvg';
 import { AppContext } from 'utils/Context';
-import { darkThemeSwitch, lightThemeSwitch } from 'utils';
 import { Sidebar } from './Sidebar';
 
 type Props = {}
 
 export const Navbar = (props: Props) => {
     const navigate = useNavigate()
-    // const {hash} = useLocation()
-    // console.log("location---", hash)
 
     const [active, setActive] = useState("landing")
     const [hamburger, sethamburger] = useState(false)
     const [side, setSide] = useState(false)
 
     const {themeState, themeToggle} = useContext(AppContext)
-
-    console.log("side status== ", side)
-
-    const toggleSide = () => setSide(!side)
 
     const scrollFun = (id: string) => {
         document

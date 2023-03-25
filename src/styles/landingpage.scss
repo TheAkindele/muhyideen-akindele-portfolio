@@ -3,7 +3,6 @@
         height: calc(100vh - 5rem);
         width: 100%;
         @include flex(column, unset, unset);
-        // border-bottom: 1px solid $tag-color;
         box-sizing: border-box;
         @include screenSize("mobile") {
           height: 80vh;
@@ -13,15 +12,35 @@
             width: 100%;
             height: 100%;
             @include flex(column, center, unset);
-            padding: 0 5%;
+            padding: 0 10%;
             position: relative;
             box-sizing: border-box;
+            @include screenSize("mac_13") {
+              padding-left: 10%;
+            }
+            @include screenSize("tab") {
+              padding-left: 5%;
+            }
+            @include screenSize("small") {
+              padding-left: 5%;
+            }
         }
     }
 
     &_welcome {
-        // color: $color-white;
-        @include fontMontserat(18, 26, 500);
+        @include fontMontserat(50, 60, 500);
+        @include screenSize("mac_13") {
+          @include fontMontserat(40, 50, 500);
+        }
+        @include screenSize("tab") {
+          @include fontMontserat(30, 40, 500);
+        }
+        @include screenSize("mobile") {
+          @include fontMontserat(25, 35, 500);
+        }
+        @include screenSize("small") {
+          @include fontMontserat(16, 25, 500);
+        }
     }
 
     &_intro {
@@ -35,17 +54,10 @@
         }
     }
 
-    &_iam {
-        // color: $color-white;
-        @include fontMontserat(18, 26, 500);
-    }
-    &_name-box {
-        position: relative;
-
-        .landing_name {
-            // color: $color-offwhite;
-            @include fontMontserat(40, 60, 700);
-
+    &_name {
+            position: relative;
+            @include fontTiltPrism(65, 75, 700);
+            margin-left: 5px;
             text-transform: uppercase;
             background-image: linear-gradient(
                 -225deg,
@@ -65,17 +77,33 @@
             animation: textclip 2s linear infinite;
             display: inline-block;
 
-            @include screenSize("mobile") {
-              @include fontMontserat(24, 35, 700);
+            @include screenSize("mac_13") {
+              @include fontTiltPrism(60, 70, 700);
             }
-        }
+
+            @include screenSize("tab") {
+              @include fontTiltPrism(40, 50, 700);
+            }
+
+            @include screenSize("mobile") {
+             
+            }
     }
 
     &_summary {
-        @include fontMontserat(18, 26, 500);
         margin-bottom: 3rem;
+        @include fontMontserat(50, 60, 500);
+        @include screenSize("mac_13") {
+          @include fontMontserat(40, 50, 500);
+        }
+        @include screenSize("tab") {
+          @include fontMontserat(30, 40, 500);
+        }
         @include screenSize("mobile") {
-          @include fontMontserat(16, 22, 500);
+          @include fontMontserat(25, 35, 500);
+        }
+        @include screenSize("small") {
+          @include fontMontserat(16, 25, 500);
         }
     }
 }

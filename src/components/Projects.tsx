@@ -14,7 +14,6 @@ const projectArr = [
 export const Projects = (props: Props) => {
   const navigate = useNavigate()
   const {pathname} = useLocation()
-  console.log("pathname-- ", pathname)
 
   const {visible, setTargetRef} = useIntersectionObserver()
 
