@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'components'
-import { DiamondSign } from './Shapes'
+import { myPhoto } from 'assets'
+import Typewriter from 'typewriter-effect';
 
 type Props = {}
 
@@ -44,11 +45,11 @@ export const About = (props: Props) => {
               </ul>
             </div>
           </div>
+          
           <div className="right">
             <div className="pics_box ">
-              <img src="/images/headshot-min.jpg" alt="" />
+              <img src={myPhoto} alt="" />
             </div>
-            {/* <PictureSlider /> */}
           </div>
         </section>
       </main>

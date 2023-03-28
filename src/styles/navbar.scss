@@ -12,26 +12,7 @@ nav {
 
     @include screenSize("mobile") {}
     
-    .my-logo {
-        position: absolute;
-        left: 5%;
-        border: 2px double $general-brighter-green;
-        border-radius: 4px;
-        @include fontTiltPrism(20, 20, 400);
-        color: $general-brighter-green;
-        padding: 5px 0.4rem;
-        cursor: pointer;
-        z-index: 300;
-        box-sizing: border-box;
-
-        &:hover {
-            animation: borderColorToggle 4s infinite alternate;
-        }
-
-        @include screenSize("mobile") {
-            left: 10%;
-        }
-    }
+    
     
     .nav {
         
@@ -158,4 +139,27 @@ nav {
 		transition: width 0.5s;
 		box-sizing: border-box;
 	}
+}
+
+.my-logo {
+    width: 4rem;
+    height: 3.5rem;
+    position: absolute;
+    left: 5%;
+    // border: 2px double $general-brighter-green;
+    // border-radius: 4px;
+    // @include fontTiltPrism(20, 20, 400);
+    // color: $general-brighter-green;
+    // padding: 5px 0.4rem;
+    cursor: pointer;
+    z-index: 300;
+    box-sizing: border-box;
+
+    // &:hover {
+    //     animation: borderColorToggle 4s infinite alternate;
+    // }
+
+    @include screenSize("mobile") {
+        left: 10%;
+    }
 }

@@ -29,6 +29,8 @@
 
     &_welcome {
         @include fontMontserat(50, 60, 500);
+        margin-bottom: 1.5rem;
+
         @include screenSize("mac_13") {
           @include fontMontserat(40, 50, 500);
         }

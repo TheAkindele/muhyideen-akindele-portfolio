@@ -32,7 +32,7 @@ export const Sidebar = ({toggleSider}: Props) => {
         className='download-btn'
       >
         <Button
-          text="Download Resume"
+          text="Resume"
           btnType='primary'
           className='sidebar-btn'
         />

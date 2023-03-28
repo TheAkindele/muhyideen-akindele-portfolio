@@ -1,6 +1,9 @@
-import { useIntersectionObserver } from 'hooks'
+import { useOnScreen } from 'hooks'
 import React, {DetailedHTMLProps, HTMLAttributes, LegacyRef, MutableRefObject, useEffect, useRef, useState} from 'react'
 import { DiamondSign } from './Shapes'
+import { motion, useAnimation } from "framer-motion";
+
+import { useInView } from "react-intersection-observer";
 
 export interface IProjectcard {
   name: string
@@ -12,17 +15,42 @@ export interface IProjectcard {
 }
 // DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
+
+
 export const ProjectCard = ({name, description, tech, url, image}: IProjectcard) => {
   const refElement = useRef<HTMLDivElement>(null)
   const [isVisible, setIsvisible] = useState(false)
   // console.log("is element visible??== ", isVisible)
 
-  const {setTargetRef, visible} = useIntersectionObserver()
+  // const {setTargetRef, visible} = useIntersectionObserver()
+  const elementRef = useRef<HTMLDivElement>(null);
+  const isOnScreen = useOnScreen(elementRef);
+  // console.log("is on screen--- ", isOnScreen)
+
+  const control = useAnimation()
+const [ref, inView] = useInView()
+
+useEffect(() => {
+  if (inView) {
+    control.start("visible");
+  } 
+}, [control, inView]);
  
+const boxVariant = {
+  visible: { opacity: 1, scale: 1 },
+  hidden: { opacity: 0, scale: 0 },
+}
 
 
   return (
-    <div className={`project_card-container ${visible && "show-project"}`} >
+    <motion.div
+      className="project_card-container"
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+    >
+    <div className={`project_card-container`} ref={elementRef}>
       <div className="left" >
         {/* <h5 className='tech'>Technology Used</h5> */}
         <ul className='project-tech'>
@@ -35,7 +63,7 @@ export const ProjectCard = ({name, description, tech, url, image}: IProjectcard)
         </ul>
       </div>
 
-      <a href="http://google.com" target="_blank" rel="noopener noreferrer"
+      <a href={url} target="_blank" rel="noopener noreferrer"
         className='center'
       >
         <div className="center-img" style={{backgroundImage: `url(${image})`}}>
@@ -47,5 +75,6 @@ export const ProjectCard = ({name, description, tech, url, image}: IProjectcard)
         <p className='project-desc'>{description}</p>
       </div>
     </div>
+    </motion.div>
   )
 }

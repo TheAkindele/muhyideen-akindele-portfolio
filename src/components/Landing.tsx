@@ -1,11 +1,12 @@
-import React from 'react'
+
 import { Button } from '.'
+import Typewriter from 'typewriter-effect';
 
 type Props = {}
 
 
 export const LandingPage = (props: Props) => {
-
+  
   return (
     <section className='landing_container' id="landing">
       <span className='text-italic-open'>{"<landing page>"}</span>
@@ -15,8 +16,8 @@ export const LandingPage = (props: Props) => {
           <span className='landing_name'>Muhyideen</span>,
         </p>
 
-        <p className='landing_summary'  >
-            A creative software engineer building 
+        <p className='landing_summary' id="summary" >
+           A creative software engineer building 
             <br />
             exceptional web experiences.
         </p>
@@ -25,7 +26,7 @@ export const LandingPage = (props: Props) => {
           className='download-btn'
         >
           <Button
-            text="Download Resume" 
+            text="Resume" 
             btnType="primary" 
             className='landing_btn'
           />
