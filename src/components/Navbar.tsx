@@ -33,12 +33,18 @@ export const Navbar = (props: Props) => {
   return (
     <nav className='nav'>
         <span className='text-italic'>{"<nav>"}</span>
-        <p className='my-logo' onClick={() => {
+        {/* <p className='my-logo' onClick={() => {
             scrollFun("landing")
             navigate("/")
         }}>
             MA
-        </p>
+        </p> */}
+        <img src="./icons/my-logo.png" alt="logo" 
+            className='my-logo' onClick={() => {
+                scrollFun("landing")
+                navigate("/")
+            }}
+        />
         <div className='nav_container'>
             <span className={`text-primary nav_link ${active === "about" ? "nav_active" : ""}`}
                 onClick={() => scrollFun("about")}
@@ -86,7 +92,12 @@ export const Navbar = (props: Props) => {
         />
 
         <aside className={`sider ${side ? "side_open" : "side_close"}`}>
-            <Sidebar toggleSider={() => setSide(false)} />
+            <Sidebar 
+                toggleSider={() => {
+                    setSide(false)
+                    sethamburger(!hamburger)
+                }} 
+            />
         </aside> 
 
         <HamburgerSvg 

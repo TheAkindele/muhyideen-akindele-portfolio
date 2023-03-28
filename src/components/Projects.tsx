@@ -1,4 +1,5 @@
-import { useIntersectionObserver } from 'hooks'
+import { useOnScreen } from 'hooks'
+import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { projectData } from 'utils/projectData'
 import { Button } from './Button'
@@ -8,8 +9,6 @@ import { ProjectCard } from './ProjectCard'
 export const Projects = () => {
   const navigate = useNavigate()
   const {pathname} = useLocation()
-
-  const {visible, setTargetRef} = useIntersectionObserver()
 
 
   return (
@@ -33,11 +32,14 @@ export const Projects = () => {
             ))}
           </section>
           {pathname === "/" && 
-          <Button
-            text="View More Projects"
-            btnType='primary'
-            onClick={() => navigate("/projects")}
-          />}
+            <div className="project_btn-box">
+              <Button
+                text="View More Projects"
+                btnType='primary'
+                onClick={() => navigate("/projects")}
+              />
+            </div>
+          }
         </main>
         <span className='text-italic-close'>{"</projects>"}</span>
     </section>

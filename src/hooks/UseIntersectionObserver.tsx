@@ -1,54 +1,75 @@
-import {useState, useEffect, useRef} from 'react'
+import {useState, useEffect, useRef, LegacyRef, RefObject} from 'react'
 
 // interface Props {
 //   showElement: () => void
 // }
 
 
-export const useIntersectionObserver = () => {
-  const [targetRef, setTargetRef] = useState(null);
-  const [visible, setVisible] = useState(false)
+// export const useIntersectionObserver = () => {
+//   const [targetRef, setTargetRef] = useState<LegacyRef<HTMLDivElement> | undefined>(null);
+//   const [visible, setVisible] = useState(false)
 
-  // console.log("target ref-- ", targetRef)
+//   // console.log("target ref-- ", targetRef)
   
 
-  // const containerRef = useRef(null)
+//   const containerRef = useRef<HTMLDivElement>(null)
 
-  // const options = {
-  //   // root: null,
-  //   rootMargin: "0px",
-  //   threshold: 1
-  // }
+//   // const options = {
+//   //   // root: null,
+//   //   rootMargin: "0px",
+//   //   threshold: 1
+//   // }
 
-  // const projectCards = document.querySelectorAll(".project_card-container")
+//   // const projectCards = document.querySelectorAll(".project_card-container")
 
-  const observer = useRef(
-		new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			if (entry.isIntersecting) {
-        console.log("elemnent is intersecting")
-        return setVisible(true)
-			}
-		}, {
-      threshold: 1
-    })
-	);
+//   const observer = new IntersectionObserver((entries) => {
+// 			const entry = entries[0];
+// 			if (entry.isIntersecting) {
+//         console.log("elemnent is intersecting")
+//         return setVisible(true)
+// 			}
+// 		}, {
+//       threshold: 1
+//   })
+	
+
+//   useEffect(() => {
+//     const currentElement = targetRef;
+// 		const currentObserver = observer?.current;
+
+// 		if (currentElement) {
+// 			currentObserver.observe(currentElement);
+// 		}
+// 		return () => {
+// 			if (currentElement) {
+// 				currentObserver.unobserve(currentElement);
+// 			}
+// 		};
+// 	}, [targetRef]);
+
+//   return { setTargetRef, visible };
+// }
+
+export const useOnScreen = (ref: RefObject<HTMLElement>) => {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const [isOnScreen, setIsOnScreen] = useState(false);
 
   useEffect(() => {
-		// const currentObserver = observer.current;
+    observerRef.current = new IntersectionObserver(([entry]) =>{
+      setIsOnScreen(entry.isIntersecting)
+      // console.log("element is showing== ", isOnScreen)
+    }, {
+      threshold: 1
+    });
+  }, []);
 
-    const currentElement = targetRef;
-		const currentObserver = observer?.current;
+  useEffect(() => {
+    observerRef.current!.observe(ref.current!);
 
-		if (currentElement) {
-			currentObserver.observe(currentElement);
-		}
-		return () => {
-			if (currentElement) {
-				currentObserver.unobserve(currentElement);
-			}
-		};
-	}, [targetRef]);
+    return () => {
+      observerRef.current!.disconnect();
+    };
+  }, [ref]);
 
-  return { setTargetRef, visible };
+  return isOnScreen;
 }
