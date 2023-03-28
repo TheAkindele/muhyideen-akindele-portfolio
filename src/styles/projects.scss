@@ -3,6 +3,7 @@
     &_container {
         // height: calc(100vh - 5rem);
         height: auto;
+        padding-bottom: 5rem;
         width: 100%;
         @include flex(column, unset, unset);
         // border-bottom: 1px solid $tag-color;

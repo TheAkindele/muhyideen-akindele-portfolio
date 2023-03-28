@@ -16,6 +16,7 @@ export const Contact = (props: Props) => {
             <h2>Contact Me</h2>
             <h2>Contact Me</h2>
           </div>
+
           <section className='contact_section'>
             <p className='get-in-touch'>
               Get in touch with me via <a href="mailto:akindelemuhyideen@gmail.com">email</a>. <br /> 
@@ -23,8 +24,6 @@ export const Contact = (props: Props) => {
               I am always very excited to network and connect with you, talk about 
               new and interesting opportunities that are out there, 
               open to consultation and answering your questions.
-              {/* I am always open to answers your questions, opportunities or
-              if you wish to connect and maybe say hi. */}
             </p>
             
             <a href="mailto:akindelemuhyideen@gmail.com">
@@ -47,11 +46,11 @@ export const Contact = (props: Props) => {
                 </a>
               </li>
               
-              <li className='social'>
+              {/* <li className='social'>
                 <a href="https://www.instagram.com/this.gcfr.guy/" target="_blank" rel="noopener noreferrer">
                   <img src={themeState ? "/icons/instagram-colored.png" : "/icons/instagram-black.png"} alt="" />
                 </a>
-              </li>
+              </li> */}
               <li className='social'>
                 <a href="https://twitter.com/MaverickHats" target="_blank" rel="noopener noreferrer">
                   <img src={themeState ? "/icons/twitter-colored.png" : "/icons/twitter-black.png"} alt="" />
@@ -68,7 +67,7 @@ export const Contact = (props: Props) => {
                 Muhyideen Akindele
               </a>
             </span>
-            <span>Copyright &copy; 2023. All Right Reserved</span>
+            <span>&copy; 2023. All Rights Reserved</span>
           </p>
         </main>
         <span className='text-italic-close'>{"</contact me>"}</span>

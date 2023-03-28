@@ -1,6 +1,5 @@
 
 import { Button } from '.'
-import Typewriter from 'typewriter-effect';
 
 type Props = {}
 

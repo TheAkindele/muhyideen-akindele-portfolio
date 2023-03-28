@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
 import { Button } from 'components'
 import { myPhoto } from 'assets'
-import Typewriter from 'typewriter-effect';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import "animate.css/animate.min.css";
 
 type Props = {}
 
@@ -21,6 +21,7 @@ export const About = (props: Props) => {
         </div>
         <section>
           <div className="left">
+          <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
             <p className='about-me'>
               Hi, my name is
               <span className='name'> Muhyideen Akindele</span>. 
@@ -32,8 +33,9 @@ export const About = (props: Props) => {
               <br />
               When I'm not in work mode, I enjoy swimming, running, football, streaming the internet and outdoor activities.
             </p>
+          </AnimationOnScroll>
             <br />
-
+            <AnimationOnScroll animateIn="animate__fadeInLeftBig" delay={60} animateOnce={true}>
             <div className='skillset'>
               <p className='text-secondary'>I am highly skilled in the following techologies;</p>
               <ul>
@@ -44,12 +46,15 @@ export const About = (props: Props) => {
                 ))}
               </ul>
             </div>
+            </AnimationOnScroll>
           </div>
           
           <div className="right">
+          <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={40} animateOnce={true}>
             <div className="pics_box ">
               <img src={myPhoto} alt="" />
             </div>
+            </AnimationOnScroll>
           </div>
         </section>
       </main>
