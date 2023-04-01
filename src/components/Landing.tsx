@@ -20,6 +20,12 @@ export const LandingPage = (props: Props) => {
             <br />
             exceptional web experiences.
         </p>
+        {/* <p id="the-logo" onClick={() => {
+            // scrollFun("landing")
+            // navigate("/")
+        }}>
+            MA
+        </p> */}
 
         <a href="https://docs.google.com/document/d/1mrQ3gzTim5bE1uYS7SZ3xA-izz9-gX3VhZ0yxQSlyjc/edit?usp=sharing" target="_blank" rel="noopener noreferrer" 
           className='download-btn'
@@ -30,6 +36,7 @@ export const LandingPage = (props: Props) => {
             className='landing_btn'
           />
         </a>
+        
         
       </main>
 

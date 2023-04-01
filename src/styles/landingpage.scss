@@ -147,4 +147,11 @@
       );
     }
 }
-  
+
+#the-logo {
+  position: relative;
+  left: auto;
+  margin: 2rem;
+  @include flex(row, center, center);
+  border: 2px solid red;
+}

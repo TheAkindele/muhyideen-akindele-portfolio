@@ -32,14 +32,8 @@ export const Navbar = (props: Props) => {
 
   return (
     <nav className='nav'>
-        <span className='text-italic'>{"<nav>"}</span>
-        {/* <p className='my-logo' onClick={() => {
-            scrollFun("landing")
-            navigate("/")
-        }}>
-            MA
-        </p> */}
-        <img src="./icons/my-logo.png" alt="logo" 
+        <span className='text-italic-open'>{"<nav>"}</span>
+        <img src={themeState ? "./icons/my-logo-dark.png" : "./icons/my-logo-light.png"} alt="logo" 
             className='my-logo' onClick={() => {
                 scrollFun("landing")
                 navigate("/")
@@ -89,6 +83,7 @@ export const Navbar = (props: Props) => {
             alt="theme" 
             style={{cursor: "pointer"}}
             onClick={() => themeToggle && themeToggle()} 
+            className='switch-icon'
         />
 
         <aside className={`sider ${side ? "side_open" : "side_close"}`}>
@@ -107,7 +102,7 @@ export const Navbar = (props: Props) => {
                 setSide(!side)
             }} 
         />
-        <span className='text-italic'>{`</nav>`}</span>
+        <span className='text-italic-close'>{`</nav>`}</span>
     </nav>
   )
 }

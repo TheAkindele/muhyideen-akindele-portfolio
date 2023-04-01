@@ -77,10 +77,12 @@ body {
 }
 .text-italic-open {
   @include fontAurore();
+  align-self: flex-start;
 }
 .text-italic-close {
   @include fontAurore();
   text-align: right;
+  align-self: flex-end;
 }
 
 .shallow {
@@ -99,6 +101,10 @@ body {
 
 .download-btn {
   text-decoration: none;
+  align-self: flex-start;
+  @include screenSize("mobile") {
+    align-self: center;
+  }
 }
 
 #bg-screen {
@@ -173,4 +179,22 @@ body {
 	}
 }
 
+
+#the-logo {
+  width: 6rem;
+    height: 5rem;
+    position: relative;
+    // left: 5%;
+    // border: 2px double $general-brighter-green;
+    // color: $general-brighter-green;
+    border: 2px double $dark-color-primary;
+    color: $dark-color-primary;
+    border-radius: 4px;
+    @include fontTiltPrism(40, 40, 400);
+    
+    padding: 5px 0.4rem;
+    cursor: pointer;
+    z-index: 300;
+    box-sizing: border-box;
+}
 
