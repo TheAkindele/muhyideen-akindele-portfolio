@@ -6,7 +6,7 @@ import "animate.css/animate.min.css";
 type Props = {}
 
 const skills = [
-  "HTML5", "CSS3", "Javascript", "Typescript", "React", "Node"
+  "HTML5", "CSS3", "Javascript", "Typescript", "React", "Node", "Express"
 ]
 
 export const About = (props: Props) => {
@@ -16,16 +16,20 @@ export const About = (props: Props) => {
       <span className='text-italic-open'>{"<about me>"}</span>
       <main>
         <div className="header_text">
-          <h2>about Me</h2>
-          <h2>about Me</h2>
+          <h2 className='title'>about Me</h2>
+          <h2 className='title'>about Me</h2>
         </div>
         <section>
           <div className="left">
           <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOnce={true}>
-            <p className='about-me'>
+            <p className='about-me text-primary'>
               Hi, my name is
-              <span className='name'> Muhyideen Akindele</span>. 
-              I am a seasoned software engineer who has architectured and developed highly scalable frontend solutions and web experiences for individuals and businesses 
+              <span className='my-name'> Muhyideen Akindele</span>
+              {/* <span className="header_text">
+                <span className='title'>Muhyideen Akindele</span>
+                <span className='title'>Muhyideen Akindele</span>
+              </span> */}
+              . I am a seasoned software engineer who has architectured and developed highly scalable frontend solutions and web experiences for individuals and businesses 
               across industries. I am equipped with diverse skill-set acquired over the years as a very enthusiastic individual, team member and team lead. 
               I am a supportive, creative thinker, energetic team player that is dedicated to providing solutions to challenges with user friendly, highly 
               automated software programs using relevant technologies. 
@@ -37,7 +41,7 @@ export const About = (props: Props) => {
             <br />
             <AnimationOnScroll animateIn="animate__fadeInLeftBig" delay={60} animateOnce={true}>
             <div className='skillset'>
-              <p className='text-secondary'>I am highly skilled in the following techologies;</p>
+              <p className='about-me text-primary'>I am skilled in the following techologies;</p>
               <ul>
                 {skills.map((item, i) => (
                   <li style={{display: "flex"}} key={i}>

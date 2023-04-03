@@ -13,8 +13,8 @@ export const Contact = (props: Props) => {
         <span className='text-italic-open'>{"<contact me>"}</span>
         <main>
          <div className="header_text">
-            <h2>Contact Me</h2>
-            <h2>Contact Me</h2>
+            <h2 className='title'>Contact Me</h2>
+            <h2 className='title'>Contact Me</h2>
           </div>
 
           <section className='contact_section'>

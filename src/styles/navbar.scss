@@ -49,7 +49,7 @@ nav {
         }
 
         &_active {
-            color: $general-brighter-green;
+            color: $general-normal-green;
             font-weight: 600;
             border-top: 2px solid $general-normal-green;
             border-right: 2px solid $general-normal-green;
@@ -75,29 +75,29 @@ nav {
     }
 }
 
-@keyframes borderColorToggle {
-    25% {
-        border-style: double; 
-        border-color: $general-brighter-green;
-        color: $general-brighter-green;
-    }
-    50%  {
-        border-style: dashed;
-        border-color: #FFE15D;
-        color: #FFE15D;
-    }
-	75% {
+// @keyframes borderColorToggle {
+//     25% {
+//         border-style: double; 
+//         border-color: $general-brighter-green;
+//         color: $general-brighter-green;
+//     }
+//     50%  {
+//         border-style: dashed;
+//         border-color: #FFE15D;
+//         color: #FFE15D;
+//     }
+// 	75% {
 		
-        border-style: double;
-        border-color: red;
-        color: red;
-	}
-    100% {
-        border-style: dashed;
-        border-color: #6C00FF;
-        color: #6C00FF;
-    }
-}
+//         border-style: double;
+//         border-color: red;
+//         color: red;
+// 	}
+//     100% {
+//         border-style: dashed;
+//         border-color: #6C00FF;
+//         color: #6C00FF;
+//     }
+// }
 
 
 .sider {
@@ -157,10 +157,6 @@ nav {
     cursor: pointer;
     z-index: 300;
     box-sizing: border-box;
-
-    // &:hover {
-    //     animation: borderColorToggle 4s infinite alternate;
-    // }
 
     @include screenSize("mobile") {
         left: 10%;
