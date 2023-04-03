@@ -35,14 +35,14 @@ export const Contact = (props: Props) => {
 
             <ul className='socials-box'>
               <li className='social'>
-                <a href="https://www.linkedin.com/in/muhyideen-akindele/" target="_blank" rel="noopener noreferrer">
-                  <img src={themeState ? "/icons/linkedin-colored.png" : "/icons/linkedin-black.png"} alt="" />
-                </a>
-              </li>
-
-              <li className='social'>
                 <a href="https://github.com/TheAkindele" target="_blank" rel="noopener noreferrer">
                   <img src={themeState ? "/icons/github-white.png" : "/icons/github-black.png"} alt="" />
+                </a>
+              </li>
+              
+              <li className='social'>
+                <a href="https://www.linkedin.com/in/muhyideen-akindele/" target="_blank" rel="noopener noreferrer">
+                  <img src={themeState ? "/icons/linkedin-white.png" : "/icons/linkedin-black.png"} alt="" />
                 </a>
               </li>
               
@@ -53,7 +53,7 @@ export const Contact = (props: Props) => {
               </li> */}
               <li className='social'>
                 <a href="https://twitter.com/MaverickHats" target="_blank" rel="noopener noreferrer">
-                  <img src={themeState ? "/icons/twitter-colored.png" : "/icons/twitter-black.png"} alt="" />
+                  <img src={themeState ? "/icons/twitter-white.png" : "/icons/twitter-black.png"} alt="" />
                 </a>
               </li>
             </ul>
