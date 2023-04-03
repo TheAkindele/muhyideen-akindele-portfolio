@@ -55,12 +55,12 @@
             }
 
             a {
-                color: $general-brighter-green;
+                color: $general-normal-green;
                 text-decoration: none;
                 
                 &:hover {
                     // text-decoration: underline;
-                    border: 1px solid $general-brighter-green;
+                    border: 1px solid $general-normal-green;
                     padding: 0 10px;
                 }
             }

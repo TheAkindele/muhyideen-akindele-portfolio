@@ -16,8 +16,8 @@ export const Projects = () => {
         <span className='text-italic-open'>{"<projects>"}</span>
         <main className='project_main'>
           <div className="header_text">
-            <h2>My Projects</h2>
-            <h2>My Projects</h2>
+            <h2 className='title'>My Projects</h2>
+            <h2 className='title'>My Projects</h2>
           </div>
           <section className='project-wrapper'>
             {(pathname === "/" ? projectData.slice(0, 3) : projectData).map((item, i) => (

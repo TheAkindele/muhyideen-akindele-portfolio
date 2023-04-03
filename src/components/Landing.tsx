@@ -10,12 +10,17 @@ export const LandingPage = (props: Props) => {
     <section className='landing_container' id="landing">
       <span className='text-italic-open'>{"<landing page>"}</span>
       <main>
-        <p className='landing_welcome text-secondary'>
-          <span>Holla 👋, I'm</span> 
-          <span className='landing_name'>Muhyideen</span>,
+        <p className='landing_welcome text-primary'>
+          <span className='holla'>Holla 👋, I'm</span> 
+          {/* <span className='landing_name'>Muhyideen</span>, */}
+          <span className="header_text">
+            <span className='title'>Muhyideen</span>
+            <span className='title'>Muhyideen</span>
+          </span>
+          {/* , */}
         </p>
 
-        <p className='landing_summary' id="summary" >
+        <p className='landing_summary text-primary' id="summary" >
            A creative software engineer building 
             <br />
             exceptional web experiences.

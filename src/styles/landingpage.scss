@@ -30,6 +30,11 @@
     &_welcome {
         @include fontMontserat(50, 60, 500);
         margin-bottom: 1.5rem;
+        @include flex(row, unset, center);
+
+        .holla {
+          margin-right: 10px;
+        }
 
         @include screenSize("mac_13") {
           @include fontMontserat(40, 50, 500);
@@ -41,7 +46,7 @@
           @include fontMontserat(25, 35, 500);
         }
         @include screenSize("small") {
-          @include fontMontserat(16, 25, 500);
+          @include fontMontserat(16, unset, 500);
         }
     }
 

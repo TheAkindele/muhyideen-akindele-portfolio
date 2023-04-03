@@ -124,7 +124,7 @@ body {
   position: relative;
   height: 3rem;
 
-  h2 {
+  .title {
     // color: $color-white;
     font-size: 3rem;
     padding: 0;
@@ -137,11 +137,11 @@ body {
 
     &:nth-child(1) {
       color: transparent;
-      -webkit-text-stroke: 2px $general-shallow-green;
+      -webkit-text-stroke: 2px $general-normal-green;  //$general-shallow-green
     }
 
     &:nth-child(2) {
-      color: $general-shallow-green;
+      color: $general-normal-green;
       animation: floatingFont 4s ease-in-out infinite;
     }
     
