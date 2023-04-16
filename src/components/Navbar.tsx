@@ -78,13 +78,13 @@ export const Navbar = (props: Props) => {
             </span>
         </div>
 
-        <img 
+        {/* <img 
             src={themeState ? "./icons/sun.svg" : "./icons/moon.svg"}
             alt="theme" 
             style={{cursor: "pointer"}}
             onClick={() => themeToggle && themeToggle()} 
             className='switch-icon'
-        />
+        /> */}
 
         <aside className={`sider ${side ? "side_open" : "side_close"}`}>
             <Sidebar 
