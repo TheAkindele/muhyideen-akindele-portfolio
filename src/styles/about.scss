@@ -24,6 +24,12 @@
                 height: auto;
             }
 
+            #about-header {
+              @include screenSize("tab") {
+                margin-bottom: 3rem;
+              }
+            }
+
             section {
                 width: 100%;
                 margin: 2rem 0 0 0;

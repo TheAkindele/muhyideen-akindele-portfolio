@@ -15,7 +15,7 @@ export const About = (props: Props) => {
     <section className='about_container' id="about">
       <span className='text-italic-open'>{"<about me>"}</span>
       <main>
-        <div className="header_text">
+        <div className="header_text" id="about-header">
           <h2 className='title'>about Me</h2>
           <h2 className='title'>about Me</h2>
         </div>
