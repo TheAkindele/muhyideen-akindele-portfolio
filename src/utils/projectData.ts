@@ -5,7 +5,7 @@ export const projectData = [
         name: "MadWallet Extension",
         description: "A decentralized cross-platform browser wallet extension for sending, saving, swapping and bridging crypto assets.",
         tech: ["Javascript", "React", "Redux", "SASS", "Web3.js", "Jest"],
-        url: "https://chrome.google.com/webstore/detail/madwallet/gcbjmdjijjpffkpbgdkaojpmaninaion?hl=en",
+        url: "https://madwallet.io/download",
         image: madwalletExtension,
         id: 1
     },
