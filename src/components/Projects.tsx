@@ -36,7 +36,7 @@ export const Projects = () => {
               <Button
                 text="View More Projects"
                 btnType='primary'
-                onClick={() => navigate("/#/projects")}
+                onClick={() => navigate("/projects")}
               />
             </div>
           }
