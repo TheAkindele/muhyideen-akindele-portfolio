@@ -104,14 +104,15 @@ nav {
     display: none;
 	@include screenSize("mobile") {
 		display: block;
-		width: 0%;
-		min-height: calc(100vh - 4.5rem);
+		width: 100%;
+		// min-height: calc(100vh - 4.5rem);
+        height: 0;
 		overflow-x: hidden;
 		position: fixed;
         top: 4.5rem;
 		right: -100%;
 		bottom: 0;
-		transition: width 1s, height 1s;
+		transition: height 5s; // width 5s, height 5s;
 		background: #FFFFFF;
 		color: white;
 		z-index: 200;
@@ -121,8 +122,10 @@ nav {
   .side_open {
     // display: none;
     @include screenSize("mobile") {
-		width: 95%;
-    	min-height: calc(100vh - 4.5rem);
+		// width: 95%;
+    	// min-height: calc(100vh - 4.5rem);
+        height: calc(100vh - 4.5rem);
+        border: 3px solid yellow;
 		// cursor: pointer;
 		position: fixed;
 		top: 4.5rem;
@@ -132,19 +135,23 @@ nav {
 		overflow-x: hidden;
 		overflow-y: auto;
 		box-sizing: border-box;
+        
 	}
   }
-  .side_close {
+.side_close {
     // display: none;
 	@include screenSize("mobile") {
-		width: 0;
-		min-height: calc(100vh - 4.5rem);
+		width: 100%;
+		// min-height: calc(100vh - 4.5rem);
+        height: 0rem;
+        border: 3px solid red;
 		overflow: hidden;
 		position: fixed;
 		top: 4.5rem;
 		right: 0;
 		bottom: 0;
-		transition: width 0.5s;
+		// transition: width 0.5s;
+        transition: height 5s;
 		box-sizing: border-box;
 	}
 }
@@ -161,4 +168,19 @@ nav {
     @include screenSize("mobile") {
         left: 10%;
     }
+}
+
+
+.activee {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 5s ease-in-out;
+}
+
+.in-activee {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 5s ease-in-out;
 }
