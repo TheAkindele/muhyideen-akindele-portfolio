@@ -1,3 +1,6 @@
+import odogwuHunterImg from "./hammer-games-assets/Odogwu-Hunter-min.png"
+// ./hammer-games-assets/Odogwu Hunter-min.png"
+
 const myPhoto = "https://res.cloudinary.com/code-messiah/image/upload/v1679749388/muhyideen-portfoli-website-images/headshot-min_jmzdsc.jpg"
 const launchpad = "https://res.cloudinary.com/code-messiah/image/upload/v1679928150/muhyideen-portfoli-website-images/Xend-Launchpad-1024x592_m6ajv0.jpg"
 const xendSavings = "https://res.cloudinary.com/code-messiah/image/upload/v1679928764/muhyideen-portfoli-website-images/Screenshot_2023-03-27_at_3.52.10_PM_pdmwbf.png"
@@ -20,4 +23,5 @@ export {
     madwalletExtension,
     xendWebsite,
     fittedTailors,
+    odogwuHunterImg
 }
